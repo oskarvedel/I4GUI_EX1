@@ -32,6 +32,13 @@ namespace The_Debt_Book
             set { name = value; }
         }
 
+        public int initialDebt
+        {
+            get { return totaldebt; }
+
+            set { totaldebt = value; }
+        }
+
         public void addDebt(int value, DateTime date)
         {
 	        debts.Add(new Debt(value, date));
