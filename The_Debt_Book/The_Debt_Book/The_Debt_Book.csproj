@@ -67,7 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DebtBookViewModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
     </Compile>
