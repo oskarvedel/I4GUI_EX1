@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:The_Debt_Book"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <DataTemplate x:Key="DebtorTemplate">
+            <WrapPanel>
+                <TextBlock Text="{Binding Path=Debtorname}" Padding="5,0" Width="140" />
+                <TextBlock Text="{Binding Path=Debtvalue}" Padding="5,0" Width="140"/>
+
+            </WrapPanel>
+        </DataTemplate>
          
     </Application.Resources>
 </Application>

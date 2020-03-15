@@ -11,7 +11,7 @@ namespace The_Debt_Book
     public class Debtor
     {
         private string name;
-        private readonly int value;
+        private int value;
 
         public Debtor()
         {
