@@ -32,9 +32,9 @@ namespace The_Debt_Book
             set { name = value; }
         }
 
-        public void addDebt(int value, DateTime date)
+        public void addDebt(int value)
         {
-	        debts.Add(new Debt(value, date));
+	        debts.Add(new Debt(value, DateTime.Now));
         }
 
     }
