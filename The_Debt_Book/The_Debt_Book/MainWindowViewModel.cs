@@ -1,20 +1,22 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Prism.Mvvm;
+using Prism;
 using System.Windows.Input;
 using System.Windows.Threading;
 using System.Xml.Serialization;
 
 namespace The_Debt_Book
 {
-	public class MainWindowViewModel : BindableBase
+	public class MainWindowViewModel
 	{
 		private ObservableCollection<Debtor> debtorList;
-		public MainWindowViewModel()
+        public MainWindowViewModel() 
 		{
 			debtorList = new ObservableCollection<Debtor>
 			{
