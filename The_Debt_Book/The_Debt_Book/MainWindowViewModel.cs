@@ -14,11 +14,11 @@ namespace The_Debt_Book
 		{
 			debtorList = new ObservableCollection<Debtor>
 			{
-			#if DEBUG
-				new Debtor("Finn Nørbygaard",1000000),
-				new Debtor("Anna Davidsen",-350)
-				#endif
-			}
+#if DEBUG
+				new Debtor("Finn Nørbygaard", 1000000),
+				new Debtor("Anna Davidsen", -350)
+#endif
+			};
 		}
 	}
 }
