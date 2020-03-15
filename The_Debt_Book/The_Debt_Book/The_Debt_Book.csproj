@@ -79,8 +79,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Debt.cs" />
+    <Compile Include="Debtors.cs" />
     <Compile Include="DebtBookViewModel.cs" />
+    <Compile Include="DeptBook.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
