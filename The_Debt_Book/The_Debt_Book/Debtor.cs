@@ -11,14 +11,18 @@ namespace The_Debt_Book
     public class Debtor
     {
         private string name;
+        private int totaldebt;
         private List<Debt> debts;
+
 
         public Debtor()
         {
         }
-        public Debtor(string dname)
+        public Debtor(string dname, int initialValue)
         {
             name = dname;
+            totaldebt = initialValue;
+
             debts = new List<Debt>();
         }
         public string Debtorname
@@ -32,9 +36,6 @@ namespace The_Debt_Book
         {
 	        debts.Add(new Debt(value, date));
         }
-
-
-
 
     }
 }

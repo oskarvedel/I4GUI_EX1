@@ -8,18 +8,18 @@ namespace The_Debt_Book
 {
 	class Debt
 	{
-		private int value;
+		private int debtValue;
 		private DateTime date;
 
 		public Debt(int dvalue, DateTime ddate)
 		{
-			value = dvalue;
+			debtValue = dvalue;
 			date = ddate;
 		}
 		public int Debtvalue
 		{
-			get { return value; }
-			set { value = value; }
+			get { return debtValue; }
+			set { debtValue = value; }
 		}
 		public DateTime datevalue
 		{
