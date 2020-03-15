@@ -1,0 +1,51 @@
+﻿<Window x:Class="The_Debt_Book.AddDebtorsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:The_Debt_Book"
+        mc:Ignorable="d"
+        Title="AddDebtorsWindow" Height="300" Width="300">
+    <Grid Background="Chartreuse">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="ADD DEBTORS" FontSize="16" 
+               FontWeight="Bold" Foreground="Fuchsia" Margin="85,0,0,0"/>
+
+        <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Content="Name" FontSize="16" 
+               FontWeight="Bold" FontStyle="Italic" Foreground="Fuchsia" Margin="40,0,0,0"/>
+
+        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="Initial Value" FontSize="16" 
+               FontWeight="Bold" FontStyle="Italic" Foreground="Fuchsia" Margin="40,0,0,0"/>
+
+
+        <TextBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="Name" Background="Fuchsia" Foreground="Chartreuse"/>
+
+        <TextBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="InitialValue" Background="Fuchsia" Foreground="Chartreuse"/>
+
+        <Button Grid.Column="1" Grid.Row="7" Content="Cancel" Background="Fuchsia" Margin="0,0,0,0" 
+                Height="25" Width="40" 
+                Foreground="Chartreuse"/>
+
+        <Button Grid.Column="0" Grid.Row="7" Content="Save" Background="Fuchsia" Margin="0,0,0,0" 
+                Height="25" Width="40" 
+                Foreground="Chartreuse"/>
+
+
+
+    </Grid>
+</Window>
