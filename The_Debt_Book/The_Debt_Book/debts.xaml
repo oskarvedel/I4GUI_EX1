@@ -31,10 +31,11 @@
                 Height="25" Width="58" 
                 Foreground="Chartreuse"/>
 
-        <Button Grid.Column="1" Grid.Row="1" Content="Add Value" Background="Fuchsia" Margin="10,10,0,0" 
+        <Button Grid.Column="0" Grid.Row="1" Content="Close" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
                 Foreground="Chartreuse"/>
 
+            
 
 
     </Grid>
