@@ -26,6 +26,7 @@
             Foreground="Fuchsia"
             ItemsSource="{Binding Path=debtorsList}"
             SelectedItem="{Binding Path=currentDebtor}"
+            SelectedIndex="{Binding Path=currentIndex}"
 
 
         />

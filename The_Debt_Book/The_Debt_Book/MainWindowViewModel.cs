@@ -29,7 +29,7 @@ namespace The_Debt_Book
 		}
 
 		#region properties
-		public ObservableCollection<Debtor> DebtorList
+		public ObservableCollection<Debtor> DebtorList0
 		{
 			get { return debtorList; } 
 			set { SetProperty(ref debtorList, value);
