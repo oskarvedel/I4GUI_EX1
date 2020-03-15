@@ -92,6 +92,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Debt.cs" />
     <Compile Include="Debtor.cs" />
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
