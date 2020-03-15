@@ -8,10 +8,10 @@ using Prism.Commands;
 
 namespace The_Debt_Book
 {
-    public class Debtor : BindableBase
+    public class Debtor
     {
         private string name;
-        private int value;
+        private readonly int value;
 
         public Debtor()
         {
@@ -21,7 +21,6 @@ namespace The_Debt_Book
         {
             name = dname;
             value = dvalue;
-
         }
 
         public string Debtorname
