@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace The_Debt_Book
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for debts.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class debts : Window
     {
-        public MainWindow()
+        public debts()
         {
             InitializeComponent();
         }
-
     }
 }
