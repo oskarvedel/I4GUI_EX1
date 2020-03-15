@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace The_Debt_Book
 {
-    class Debtors
+    class Debtor
     {
         private string name;
         private int value;
 
-        public Debtors()
+        public Debtor()
         {
         }
 
-        public Debtors(string dname, int dvalue)
+        public Debtor(string dname, int dvalue)
         {
             name = dname;
             value = dvalue;
