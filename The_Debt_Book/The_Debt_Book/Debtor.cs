@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_Debt_Book
 {
-    class Debtor
+    public class Debtor
     {
         private string name;
         private int value;

@@ -4,10 +4,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Mvvm;
+using System.Windows.Input;
+using System.Windows.Threading;
+using System.Xml.Serialization;
 
 namespace The_Debt_Book
 {
-	public class MainWindowViewModel
+	public class MainWindowViewModel : BindableBase
 	{
 		private ObservableCollection<Debtor> debtorList;
 		public MainWindowViewModel()
@@ -20,5 +24,14 @@ namespace The_Debt_Book
 #endif
 			};
 		}
+
+		#region properties
+		public ObservableCollection<Debtor> DebtorList
+		{
+			get { return debtorList; } 
+			set { SetProperty(ref debtorList, value);
+		}
+		}
+#endregion
 	}
 }
