@@ -60,5 +60,18 @@ namespace The_Debt_Book
 		#region Commands
 
 		#endregion
+		ICommand _newCommand;
+		public ICommand AddNewDebtorCommand
+		{
+			get
+			{
+				return _newCommand ?? (_newCommand = new DelegateCommand(() =>
+				{
+					DebtorList.Add(new Debtor());
+					CurrentIndex = DebtorList.Count - 1;
+				}));
+			}
+		}
+
 	}
 }
