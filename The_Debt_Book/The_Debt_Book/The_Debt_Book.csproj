@@ -68,6 +68,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DebtBookViewModel.cs" />
+    <Compile Include="Debtors.cs" />
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
     </Compile>
