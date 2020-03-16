@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Debt_Book"
+        xmlns:viewModels="clr-namespace:The_Debt_Book.ViewModels"
         mc:Ignorable="d"
         Title="AddDebtorsWindow" Height="250" Width="300" Name="AddDebtorsSubWindow">
     <Window.DataContext>
-        <local:AddDebtorViewModel/>
+        <viewModels:AddDebtorViewModel/>
     </Window.DataContext>
     <Grid Background="Chartreuse">
         <Grid.ColumnDefinitions>

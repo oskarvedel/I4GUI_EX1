@@ -9,7 +9,7 @@ using Prism.Mvvm;
 using Prism;
 using Prism.Commands;
 
-namespace The_Debt_Book
+namespace The_Debt_Book.ViewModels
 {
     public class AddDebtorViewModel : BindableBase
     {
@@ -60,7 +60,19 @@ namespace The_Debt_Book
 
         public bool IsValid
         {
-            get { return true; }
+            get
+            {
+                bool isValid = true;
+                if (string.IsNullOrWhiteSpace(CurrentDebtor.Debtorname))
+                    isValid = false;
+                if (string.IsNullOrWhiteSpace(CurrentDebtor.InitDebt.ToString()))
+                    isValid = false;
+                return isValid;
+            }
+            //set
+            //{
+            //    SetProperty(ref isValid, value);
+            //}
         }
         #endregion
     }
