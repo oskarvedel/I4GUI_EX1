@@ -31,10 +31,10 @@
             SelectedItem="{Binding Path=CurrentDebtor}"
             SelectedIndex="{Binding Path=CurrentIndex}"
             IsSynchronizedWithCurrentItem="True"
-            ItemTemplate="{StaticResource DebtorTemplate}" 
+            ItemTemplate="{StaticResource DebtorTemplate}"
         >
             <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseDoubleClick">
+                <i:EventTrigger  EventName="SelectionChanged" >
                     <i:InvokeCommandAction Command="{Binding EditDebtsCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
