@@ -11,6 +11,14 @@
 
             </WrapPanel>
         </DataTemplate>
+
+        <DataTemplate x:Key="DebtsTemplate">
+            <WrapPanel>
+                <TextBlock Text="{Binding Path=Datevalue}" Padding="5,0" Width="140" />
+                <TextBlock Text="{Binding Path=Debtvalue}" Padding="5,0" Width="140"/>
+
+            </WrapPanel>
+        </DataTemplate>
          
     </Application.Resources>
 </Application>

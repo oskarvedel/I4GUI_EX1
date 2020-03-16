@@ -28,34 +28,8 @@ namespace The_Debt_Book.ViewModels
         
         }
 
-        #endregion
-
-        #region commands
-        ICommand _saveBtnCommand;
-        public ICommand SaveBtnCommand
-        {
-	        get
-            {
-                return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(
-
-                               SaveBtnCommandExecute, SaveBtnCommandCanExecute)
-                           .ObservesProperty(() => CurrentDebtor.Debtorname)
-                           .ObservesProperty(() => CurrentDebtor.InitDebt));
-            }
-        }
-
-        public void SaveBtnCommandExecute()
-        { }
-
-
-        public bool SaveBtnCommandCanExecute()
-        {
-            return IsValid;
-        }
-
-
         public bool IsValid
-        { 
+        {
 
             get
             {
@@ -68,6 +42,30 @@ namespace The_Debt_Book.ViewModels
             }
 
         }
+        #endregion
+
+        #region commands
+        ICommand _saveBtnCommand;
+        public ICommand SaveBtnCommand
+        {
+	        get => _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(
+            
+
+                           SaveBtnCommandExecute, SaveBtnCommandCanExecute)
+                       .ObservesProperty(() => CurrentDebtor.Debtorname)
+                       .ObservesProperty(() => CurrentDebtor.InitDebt));
+            
+        }
+
+        public void SaveBtnCommandExecute()
+        { }
+
+
+        public bool SaveBtnCommandCanExecute()
+        {
+            return IsValid;
+        }
+
         #endregion
     }
 }

@@ -12,10 +12,11 @@ namespace The_Debt_Book
 		private int debtValue;
 		private DateTime date;
 
-		public Debt()
+        public Debt()
 		{
-			date = DateTime.Now;
+			Datevalue = DateTime.Now;
 			debtValue = 0;
+
 		}
 
 		public Debt(int dvalue, DateTime ddate)
@@ -30,7 +31,7 @@ namespace The_Debt_Book
             get => debtValue;
             set => SetProperty(ref debtValue, value);
 		}
-		public DateTime datevalue
+		public DateTime Datevalue
 		{
             get => date;
             set => SetProperty(ref date, value);

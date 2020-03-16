@@ -36,12 +36,13 @@
         >
 
         <i:Interaction.Triggers>
-                <i:EventTrigger  EventName="SelectionChanged" >
+                <i:EventTrigger  EventName="MouseDoubleClick" >
                     <i:InvokeCommandAction Command="{Binding EditDebtsCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
 
          </ListBox>
+
 
         <Button Grid.Column="1" Grid.Row="1" Content="Add" Background="Chartreuse" Margin="10,10,0,0" 
                 Height="25" Width="40" 

@@ -30,6 +30,11 @@ namespace The_Debt_Book
             set => SetProperty(ref name, value);
         }
 
+        public Debtor Clone()
+        {
+            return this.MemberwiseClone() as Debtor;
+        }
+
         public void addDebt(int value)
         {
 	        debts.Add(new Debt(value, DateTime.Now));

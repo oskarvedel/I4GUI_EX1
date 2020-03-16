@@ -27,18 +27,25 @@
         <ListBox Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" Background="Fuchsia"
                  Name="deptorList"
                  Foreground="Chartreuse"
-                 ItemsSource="{Binding Path=CurrentDebtor}"
-                 SelectedItem="{Binding Path=CurrentDebtor}"
+                 ItemsSource="{Binding Path=CurrentDebtor.Debts}"
+                 ItemTemplate="{StaticResource DebtsTemplate}"
+                 
         />
 
-        <TextBox Grid.Column="1" Grid.Row="2" Text=""  TextAlignment="Center" Background="Fuchsia" Margin="10,10,0,0" 
+        <TextBox Grid.Column="1" Grid.Row="2" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
-                Foreground="Chartreuse"/>
+                Foreground="Chartreuse"
+                ToolTip="Add value"
+                Text="{Binding Path=Inputfield}"
+                
+        />
 
 
         <Button Grid.Column="1" Grid.Row="1" Content="Add Value" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
-                Foreground="Chartreuse"/>
+                Foreground="Chartreuse"
+                Click="AddValueButton_OnClick"
+                Command="{Binding Path=AddValueBtnCommand}"/>
 
         <Button Grid.Column="0" Grid.Row="2" Content="Close" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
