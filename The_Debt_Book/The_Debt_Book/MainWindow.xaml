@@ -34,14 +34,14 @@
             IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource DebtorTemplate}"
         >
-            <i:Interaction.Triggers>
+
+        <i:Interaction.Triggers>
                 <i:EventTrigger  EventName="SelectionChanged" >
                     <i:InvokeCommandAction Command="{Binding EditDebtsCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
 
-
-        </ListBox>
+         </ListBox>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Add" Background="Chartreuse" Margin="10,10,0,0" 
                 Height="25" Width="40" 
