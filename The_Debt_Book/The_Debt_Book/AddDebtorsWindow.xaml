@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:The_Debt_Book"
         mc:Ignorable="d"
         Title="AddDebtorsWindow" Height="250" Width="300">
+    <Window.DataContext>
+        <local:AddDebtorViewModel/>
+    </Window.DataContext>
     <Grid Background="Chartreuse">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>

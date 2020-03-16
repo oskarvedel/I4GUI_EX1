@@ -13,28 +13,11 @@ namespace The_Debt_Book
 {
     class AddDebtorViewModel : BindableBase
     {
-        public AddDebtorViewModel()
+        public AddDebtorViewModel(Debtor debtor)
         {
             
         }
 
-
-
-        #region Commands
-        ICommand _newCommand;
-        public ICommand CancelCommand
-        {
-            get
-            {
-                return _newCommand ?? (_newCommand = new DelegateCommand(() =>
-                {
-                    
-                }));
-            }
-        }
-
-
-        #endregion
     }
 }
 

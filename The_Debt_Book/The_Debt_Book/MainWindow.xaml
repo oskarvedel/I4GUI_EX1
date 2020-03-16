@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Debt_Book"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:interactivity="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="500">
     <Window.DataContext>
@@ -28,8 +30,7 @@
             SelectedItem="{Binding Path=CurrentDebtor}"
             SelectedIndex="{Binding Path=CurrentIndex}"
             IsSynchronizedWithCurrentItem="True"
-            ItemTemplate="{StaticResource DebtorTemplate}"
-
+            ItemTemplate="{StaticResource DebtorTemplate}" 
         />
 
 
@@ -38,8 +39,14 @@
                 Foreground="Fuchsia"
                 Command="{Binding Path=AddNewDebtorCommand}"/>
 
-        
-        
+
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseDoubleClick">
+                <interactivity:InvokeCommandAction Command="{Binding EditDebts}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+
     </Grid>
 </Window>
 
