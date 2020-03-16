@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:The_Debt_Book"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:interactivity="http://prismlibrary.com/"
+        xmlns:viewModels="clr-namespace:The_Debt_Book.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="500">
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <viewModels:MainWindowViewModel/>
     </Window.DataContext>
     <Grid Background="Fuchsia">
         <Grid.ColumnDefinitions>

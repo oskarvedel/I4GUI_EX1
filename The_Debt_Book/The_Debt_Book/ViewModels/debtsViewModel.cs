@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace The_Debt_Book
+namespace The_Debt_Book.ViewModels
 {
     class debtsViewModel
     {

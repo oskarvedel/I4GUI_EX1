@@ -12,19 +12,18 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using System.Xml.Serialization;
 
-namespace The_Debt_Book
+namespace The_Debt_Book.ViewModels
 {
 	public class MainWindowViewModel : BindableBase
 	{
 		private ObservableCollection<Debtor> debtorList;
-		private Debtor currentDebtor;
-		public MainWindowViewModel()
-        {
-            debtorList = new ObservableCollection<Debtor>
-            {
 
+        public MainWindowViewModel()
+        {
+            debtorList = new ObservableCollection<Debtor>()
+            {
+				new Debtor(new Debt(100,DateTime.Now), "Finn")
             };
-            CurrentDebtor = null;
         }
 
 		#region properties
@@ -35,7 +34,9 @@ namespace The_Debt_Book
 			}
 		}
 
-		public Debtor CurrentDebtor
+
+		Debtor currentDebtor;
+        public Debtor CurrentDebtor
 		{
 			get
 			{
