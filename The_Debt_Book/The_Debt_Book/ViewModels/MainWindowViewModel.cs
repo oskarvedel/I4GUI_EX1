@@ -18,15 +18,12 @@ namespace The_Debt_Book
 	{
 		private ObservableCollection<Debtor> debtorList;
 		public MainWindowViewModel()
-		{
-			debtorList = new ObservableCollection<Debtor>
-			{
+        {
+            debtorList = new ObservableCollection<Debtor>
+            {
 
-				new Debtor("Finn Noerbygaard", 1000000),
-				new Debtor("Anna Davidsen", -350)
-
-			};
-		}
+            };
+        }
 
 		#region properties
 		public ObservableCollection<Debtor> DebtorList
@@ -69,13 +66,16 @@ namespace The_Debt_Book
                 {
                     var newDebtor = new Debtor();
                     var vm = new AddDebtorViewModel(newDebtor);
-                    var win2 = new AddDebtorsWindow();
-                    win2.DataContext = vm;
-                    if (win2.ShowDialog() == true)
+					var win2 = new AddDebtorsWindow
+					{
+						DataContext = vm
+					};
+					if (win2.ShowDialog() == true)
                     {
                         debtorList.Add(newDebtor);
+						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
                         CurrentDebtor = newDebtor;
-                        CurrentIndex = 0;
+                        CurrentIndex = (debtorList.Count-1);
                     }
                 }));
             }

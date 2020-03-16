@@ -43,7 +43,9 @@
 
         <Button Grid.Column="0" Grid.Row="2" Content="Close" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
-                Foreground="Chartreuse" IsCancel="True"/>
+                Foreground="Chartreuse"
+                IsCancel="True"
+                />
 
             
 
