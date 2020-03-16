@@ -14,14 +14,13 @@ namespace The_Debt_Book
     {
         private string name;
         private int totaldebt;
-        private ObservableCollection<Debt> debts;
+        private ObservableCollection<Debt> debts = new ObservableCollection<Debt>();
         public Debtor()
         {
         }
         public Debtor(Debt initialDebt,string dname)
         {
             name = dname;
-            debts = new ObservableCollection<Debt>();
             Debts.Add(initialDebt);
             totaldebt = initialDebt.Debtvalue;
         }
