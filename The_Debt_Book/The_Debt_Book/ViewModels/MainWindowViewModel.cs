@@ -17,6 +17,7 @@ namespace The_Debt_Book
 	public class MainWindowViewModel : BindableBase
 	{
 		private ObservableCollection<Debtor> debtorList;
+		private Debtor currentDebtor;
 		public MainWindowViewModel()
         {
             debtorList = new ObservableCollection<Debtor>
@@ -34,7 +35,6 @@ namespace The_Debt_Book
 			}
 		}
 
-		private Debtor currentDebtor = null;
 		public Debtor CurrentDebtor
 		{
 			get
@@ -76,7 +76,7 @@ namespace The_Debt_Book
                         debtorList.Add(newDebtor);
 						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
                         CurrentDebtor = newDebtor;
-                        CurrentIndex = 0;
+                        CurrentIndex = (debtorList.Count - 1);
                     }
                 }));
             }
