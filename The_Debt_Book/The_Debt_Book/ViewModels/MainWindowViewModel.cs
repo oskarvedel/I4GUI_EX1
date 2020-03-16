@@ -23,6 +23,7 @@ namespace The_Debt_Book
             {
 
             };
+            CurrentDebtor = null;
         }
 
 		#region properties
@@ -75,7 +76,7 @@ namespace The_Debt_Book
                         debtorList.Add(newDebtor);
 						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
                         CurrentDebtor = newDebtor;
-                        CurrentIndex = (debtorList.Count-1);
+                        CurrentIndex = 0;
                     }
                 }));
             }
