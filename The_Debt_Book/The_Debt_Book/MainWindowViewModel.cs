@@ -67,9 +67,11 @@ namespace The_Debt_Book
             {
                 return _newCommand ?? (_newCommand = new DelegateCommand(() =>
                 {
-					var vm = new AddDebtorViewModel();
                     var win2 = new AddDebtorsWindow();
-                    win2.Show();
+                    if (win2.ShowDialog() == true)
+                    {
+
+                    }
                 }));
             }
         }
