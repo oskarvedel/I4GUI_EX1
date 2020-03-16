@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,22 +10,22 @@ using Prism.Commands;
 
 namespace The_Debt_Book
 {
-    public class Debtor
+    public class Debtor : BindableBase
     {
         private string name;
         private int totaldebt;
-        private List<Debt> debts;
+        private ObservableCollection<Debt> debts;
 
 
         public Debtor()
         {
         }
-        public Debtor(string dname, int initialValue)
+        public Debtor(Debt initialDebt,string dname)
         {
             name = dname;
-            totaldebt = initialValue;
-
-            debts = new List<Debt>();
+            debts = new ObservableCollection<Debt>();
+            debts.Add(initialDebt);
+            totaldebt = initialDebt.Debtvalue;
         }
         public string Debtorname
         {
@@ -44,5 +46,11 @@ namespace The_Debt_Book
             set { totaldebt = value; }
         }
 
+        public ObservableCollection<Debt> Debts
+        {
+            get => debts;
+            set => SetProperty(ref debts, value);
+
+        }
     }
 }

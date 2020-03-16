@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_Debt_Book
 {
-	class Debt
+	public class Debt
 	{
 		private int debtValue;
 		private DateTime date;

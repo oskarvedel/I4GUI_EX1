@@ -22,10 +22,7 @@ namespace The_Debt_Book
 			debtorList = new ObservableCollection<Debtor>
 			{
 
-				new Debtor("Finn Noerbygaard", 1000000),
-				new Debtor("Anna Davidsen", -350)
-
-			};
+            };
 		}
 
 		#region properties
@@ -74,8 +71,9 @@ namespace The_Debt_Book
                     if (win2.ShowDialog() == true)
                     {
                         debtorList.Add(newDebtor);
+						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
                         CurrentDebtor = newDebtor;
-                        CurrentIndex = 0;
+                        CurrentIndex = (debtorList.Count-1);
                     }
                 }));
             }
