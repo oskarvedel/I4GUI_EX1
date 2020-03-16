@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Debt_Book"
         mc:Ignorable="d"
-        Title="AddDebtorsWindow" Height="250" Width="300">
+        Title="AddDebtorsWindow" Height="250" Width="300" Name="AddDebtorsSubWindow">
+    <Window.DataContext>
+        <local:AddDebtorViewModel/>
+    </Window.DataContext>
     <Grid Background="Chartreuse">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -39,7 +42,8 @@
                 Height="25" Width="40" 
                 Foreground="Chartreuse"
                 IsCancel="True"
-                Command="{Binding Path=CancelCommand}"
+                Command="{Binding Path = CloseWindowCommand, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=AddDebtorWindow}"
                 />
 
         <Button Name ="Save" Grid.Column="0" Grid.Row="5" Content="Save" Background="Fuchsia" Margin="0,10,0,0" 
