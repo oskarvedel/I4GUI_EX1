@@ -19,15 +19,13 @@ namespace The_Debt_Book.ViewModels
         }
 
         #region properties
-        Debtor currentDebtor;
+        private Debtor _currentDebtor;
 
         public Debtor CurrentDebtor
 		{
-        get { return currentDebtor; }
-        set
-        {
-	        SetProperty(ref currentDebtor, value);
-        }
+        get  => _currentDebtor;
+        set => SetProperty(ref _currentDebtor, value);
+        
         }
 
         #endregion
@@ -47,9 +45,7 @@ namespace The_Debt_Book.ViewModels
         }
 
         public void SaveBtnCommandExecute()
-        {
-
-        }
+        { }
 
 
         public bool SaveBtnCommandCanExecute()
@@ -59,7 +55,8 @@ namespace The_Debt_Book.ViewModels
 
 
         public bool IsValid
-        {
+        { 
+
             get
             {
                 bool isValid = true;
@@ -69,10 +66,7 @@ namespace The_Debt_Book.ViewModels
                     isValid = false;
                 return isValid;
             }
-            //set
-            //{
-            //    SetProperty(ref isValid, value);
-            //}
+
         }
         #endregion
     }

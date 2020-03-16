@@ -32,9 +32,11 @@
                FontWeight="Bold" FontStyle="Italic" Foreground="Fuchsia" Margin="40,0,0,0"/>
 
 
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="Name" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=CurrentDebtor.Debtorname}"/>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="40,0,40,0" 
+                 Name="Name" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=CurrentDebtor.Debtorname}"/>
 
-        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="InitialValue" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=CurrentDebtor.InitDebt}"/>
+        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="40,0,40,0" 
+                 Name="InitialValue" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=CurrentDebtor.InitDebt}"/>
 
         <Button Name = "Cancel" Grid.Column="1" Grid.Row="5" Content="Cancel" Background="Fuchsia" Margin="0,10,0,0" 
                 Height="25" Width="40" 
@@ -45,6 +47,7 @@
         <Button Name ="Save" Grid.Column="0" Grid.Row="5" Content="Save" Background="Fuchsia" Margin="0,10,0,0" 
                 Height="25" Width="40" 
                 Foreground="Chartreuse"
+                Click="AddButton_OnClick"
                 Command="{Binding Path=SaveBtnCommand}"
         />
 

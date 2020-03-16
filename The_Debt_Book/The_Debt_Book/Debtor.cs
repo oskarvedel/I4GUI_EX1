@@ -27,9 +27,8 @@ namespace The_Debt_Book
         }
         public string Debtorname
         {
-            get { return name; }
-
-            set { name = value; }
+            get => name;
+            set => SetProperty(ref name, value);
         }
 
         public void addDebt(int value)
@@ -39,9 +38,8 @@ namespace The_Debt_Book
 
         public int InitDebt
         {
-            get { return totaldebt; }
-
-            set { totaldebt = value; }
+            get => totaldebt;
+            set => SetProperty(ref totaldebt, value);
         }
 
         public ObservableCollection<Debt> Debts

@@ -23,5 +23,10 @@ namespace The_Debt_Book
         {
             InitializeComponent();
         }
+
+        private void AddButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }

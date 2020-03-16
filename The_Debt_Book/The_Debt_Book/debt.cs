@@ -27,14 +27,13 @@ namespace The_Debt_Book
 
 		public int Debtvalue
 		{
-			get { return debtValue; }
-			set { debtValue = value; }
+            get => debtValue;
+            set => SetProperty(ref debtValue, value);
 		}
 		public DateTime datevalue
 		{
-			get { return date; }
-
-			set { date = value; }
+            get => date;
+            set => SetProperty(ref date, value);
 		}
 	}
 }

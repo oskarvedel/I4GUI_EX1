@@ -16,6 +16,7 @@ namespace The_Debt_Book.ViewModels
 {
 	public class MainWindowViewModel : BindableBase
 	{
+        private Debtor _currentDebtor;
 		private ObservableCollection<Debtor> debtorList;
 
         public MainWindowViewModel()
@@ -35,7 +36,7 @@ namespace The_Debt_Book.ViewModels
 		}
 
 
-		Debtor currentDebtor;
+		Debtor currentDebtor = null;
         public Debtor CurrentDebtor
 		{
 			get
@@ -62,25 +63,24 @@ namespace The_Debt_Book.ViewModels
 		ICommand addNewDebtorCommand;
 		public ICommand AddNewDebtorCommand
         {
-            get
+            get => addNewDebtorCommand ?? (addNewDebtorCommand = new DelegateCommand(() =>
             {
-                return addNewDebtorCommand ?? (addNewDebtorCommand = new DelegateCommand(() =>
-                {
+                
                     var newDebtor = new Debtor();
                     var vm = new AddDebtorViewModel(newDebtor);
-					var win2 = new AddDebtorsWindow()
-					{
-						DataContext = vm
-					};
-					if (win2.ShowDialog() == true)
+                    var win2 = new AddDebtorsWindow()
                     {
-                        debtorList.Add(newDebtor);
-						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
+                        DataContext = vm
+                    };
+                    if (win2.ShowDialog() == true)
+                    {
+                        DebtorList.Add(newDebtor);
+                        newDebtor.Debts.Add(new Debt(newDebtor.InitDebt, DateTime.Now));
                         CurrentDebtor = newDebtor;
-                        CurrentIndex = (debtorList.Count - 1);
+                        CurrentIndex = (DebtorList.Count - 1);
                     }
-                }));
-            }
+
+            }));
         }
 
         ICommand editDebtsCommand;
