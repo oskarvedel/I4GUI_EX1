@@ -38,7 +38,10 @@ namespace The_Debt_Book
         {
 	        get
 	        {
-		        return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand()));
+		        return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(()=>
+                {
+
+                }));
 	        }
         }
         #endregion
