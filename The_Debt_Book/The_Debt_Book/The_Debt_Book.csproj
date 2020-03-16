@@ -88,6 +88,7 @@
     <Compile Include="AddDebtorsWindow.xaml.cs">
       <DependentUpon>AddDebtorsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddDebtorViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +98,7 @@
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="debtsViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
