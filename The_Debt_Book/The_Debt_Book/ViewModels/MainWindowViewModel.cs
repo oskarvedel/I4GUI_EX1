@@ -18,12 +18,12 @@ namespace The_Debt_Book
 	{
 		private ObservableCollection<Debtor> debtorList;
 		public MainWindowViewModel()
-		{
-			debtorList = new ObservableCollection<Debtor>
-			{
+        {
+            debtorList = new ObservableCollection<Debtor>
+            {
 
             };
-		}
+        }
 
 		#region properties
 		public ObservableCollection<Debtor> DebtorList
@@ -66,9 +66,11 @@ namespace The_Debt_Book
                 {
                     var newDebtor = new Debtor();
                     var vm = new AddDebtorViewModel(newDebtor);
-                    var win2 = new AddDebtorsWindow();
-                    win2.DataContext = vm;
-                    if (win2.ShowDialog() == true)
+					var win2 = new AddDebtorsWindow
+					{
+						DataContext = vm
+					};
+					if (win2.ShowDialog() == true)
                     {
                         debtorList.Add(newDebtor);
 						newDebtor.Debts.Add(new Debt(newDebtor.InitDebt,DateTime.Now));
