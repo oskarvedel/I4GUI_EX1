@@ -67,15 +67,20 @@ namespace The_Debt_Book
             {
                 return _newCommand ?? (_newCommand = new DelegateCommand(() =>
                 {
+					var newDebtor = new Debtor();
+					var vm = new AddDebtorViewModel(newDebtor);
                     var win2 = new AddDebtorsWindow();
                     if (win2.ShowDialog() == true)
                     {
-
+						debtorList.Add(newDebtor);
+                        CurrentDebtor = newDebtor;
+                        CurrentIndex = 0;
                     }
                 }));
             }
         }
 
+	
 
 	}
 }
