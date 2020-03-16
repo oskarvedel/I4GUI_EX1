@@ -23,20 +23,20 @@ namespace The_Debt_Book
 
         #endregion
 
-        #region commands
-        ICommand saveDebtor;
-        public ICommand saveDebtor
-        {
-	        get
-	        {
-		        return saveDebtor ?? (saveDebtor = new DelegateCommand(() =>
-		        {
-                    input
-		        }
-		        }));
-	        }
-        }
-        #endregion
+        //#region commands
+        //ICommand saveDebtor;
+        //public ICommand saveDebtor
+        //{
+	       // get
+	       // {
+		      //  return saveDebtor ?? (saveDebtor = new DelegateCommand(() =>
+		      //  {
+        //            input
+		      //  }
+		      //  }));
+	       // }
+        //}
+        //#endregion
     }
 }
 
