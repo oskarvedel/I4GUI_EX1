@@ -22,8 +22,9 @@ namespace The_Debt_Book.ViewModels
         {
             debtorList = new ObservableCollection<Debtor>()
             {
-				new Debtor(new Debt(100,DateTime.Now), "Finn")
-            };
+				new Debtor(new Debt(100,DateTime.Now), "Finn"),
+                new Debtor(new Debt(1100,DateTime.Now), "Ole")
+			};
         }
 
 		#region properties

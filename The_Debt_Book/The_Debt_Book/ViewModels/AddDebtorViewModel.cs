@@ -19,6 +19,7 @@ namespace The_Debt_Book.ViewModels
         }
 
         #region properties
+
         Debtor currentDebtor;
 
         public Debtor CurrentDebtor
@@ -32,27 +33,27 @@ namespace The_Debt_Book.ViewModels
 
         #endregion
 
-        #region commands
-        ICommand _saveBtnCommand;
-        public ICommand SaveBtnCommand
+        #region Commands
+
+        private ICommand _saveBtnCommand;
+        public ICommand SaveCommand
         {
 	        get
             {
                 return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(
 
-                               SaveBtnCommandExecute, SaveBtnCommandCanExecute)
+                               SaveCommandExecute, SaveCommandCanExecute)
                            .ObservesProperty(() => CurrentDebtor.Debtorname)
                            .ObservesProperty(() => CurrentDebtor.InitDebt));
             }
         }
-
-        public void SaveBtnCommandExecute()
+        #endregion
+        private void SaveCommandExecute()
         {
-
         }
 
 
-        public bool SaveBtnCommandCanExecute()
+        private bool SaveCommandCanExecute()
         {
             return IsValid;
         }
@@ -60,21 +61,21 @@ namespace The_Debt_Book.ViewModels
 
         public bool IsValid
         {
+
             get
             {
-                bool isValid = true;
-                if (string.IsNullOrWhiteSpace(CurrentDebtor.Debtorname))
-                    isValid = false;
-                if (string.IsNullOrWhiteSpace(CurrentDebtor.InitDebt.ToString()))
-                    isValid = false;
-                return isValid;
+                //bool isValid = true;
+
+                //if (string.IsNullOrWhiteSpace(CurrentDebtor.Debtorname))
+                //    isValid = false;
+
+                //if (string.IsNullOrWhiteSpace(CurrentDebtor.InitDebt.ToString()))
+                //    isValid = false;
+
+                return true;
             }
-            //set
-            //{
-            //    SetProperty(ref isValid, value);
-            //}
+
         }
-        #endregion
     }
 }
 

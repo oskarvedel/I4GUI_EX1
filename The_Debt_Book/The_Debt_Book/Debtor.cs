@@ -22,7 +22,7 @@ namespace The_Debt_Book
         {
             name = dname;
             debts = new ObservableCollection<Debt>();
-            debts.Add(initialDebt);
+            Debts.Add(initialDebt);
             totaldebt = initialDebt.Debtvalue;
         }
         public string Debtorname
