@@ -67,7 +67,7 @@ namespace The_Debt_Book
                 {
                     var newDebtor = new Debtor();
                     var vm = new AddDebtorViewModel(newDebtor);
-					var win2 = new AddDebtorsWindow
+					var win2 = new AddDebtorsWindow()
 					{
 						DataContext = vm
 					};
