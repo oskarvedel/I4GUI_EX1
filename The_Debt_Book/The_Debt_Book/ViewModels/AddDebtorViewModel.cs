@@ -34,14 +34,34 @@ namespace The_Debt_Book
 
         #region commands
         ICommand _saveBtnCommand;
-        public ICommand OkBtnCommand
+        public ICommand _saveBtnCommand
         {
-	        get
-	        {
-		        return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand()));
-	        }
+	        return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand()
+	        .ObservesProperty(() => CurrentDebtor())
+	        .ObservesProperty(() => CurrentDebtor.CodeName));
         }
-        #endregion
+
+    private void OkButtonCommandExecute()
+    { }
+
+    private bool OkButtonCommandCanExecute()
+    {
+    return IsValid;
     }
+
+    public bool IsValid
+    {
+    get
+    {
+	    bool isValid = true;
+	    if (string.IsNullOrWhiteSpace(CurrentDebtor.Name))
+		    isValid = false;
+	    if (string.IsNullOrWhiteSpace(CurrentDebtor.Debt.ToString()))
+		    isValid = false;
+	    return isValid;
+    }
+    }
+    #endregion
+}
 }
 

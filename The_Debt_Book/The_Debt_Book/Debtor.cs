@@ -37,5 +37,6 @@ namespace The_Debt_Book
 	        debts.Add(new Debt(value, DateTime.Now));
         }
 
+
     }
 }
