@@ -70,6 +70,7 @@ namespace The_Debt_Book
                     var newDebtor = new Debtor();
                     var vm = new AddDebtorViewModel(newDebtor);
                     var win2 = new AddDebtorsWindow();
+                    win2.DataContext = vm;
                     if (win2.ShowDialog() == true)
                     {
                         debtorList.Add(newDebtor);
@@ -89,7 +90,10 @@ namespace The_Debt_Book
                     var newDebtor = new Debtor();
                     var vm = new debtsViewModel();
                     var win2 = new debts();
-                    if (win2.ShowDialog() == true) { }
+                    if (win2.ShowDialog() == true)
+                    {
+
+                    }
 
                 }));
             }

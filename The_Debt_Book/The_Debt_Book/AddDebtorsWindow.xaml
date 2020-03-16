@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Debt_Book"
         mc:Ignorable="d"
-        Title="AddDebtorsWindow" Height="250" Width="300">
+        Title="AddDebtorsWindow" Height="250" Width="300" Name="AddDebtorsSubWindow">
     <Window.DataContext>
         <local:AddDebtorViewModel/>
     </Window.DataContext>
@@ -34,21 +34,23 @@
                FontWeight="Bold" FontStyle="Italic" Foreground="Fuchsia" Margin="40,0,0,0"/>
 
 
-        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="Name" Background="Fuchsia" Foreground="Chartreuse"/>
+        <TextBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="Name" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=currentDebtor.Debtorname}"/>
 
-        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="InitialValue" Background="Fuchsia" Foreground="Chartreuse"/>
+        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="40,0,40,0" Name="InitialValue" Background="Fuchsia" Foreground="Chartreuse" Text="{Binding Path=currentDebtor.addDebt}"/>
 
         <Button Name = "Cancel" Grid.Column="1" Grid.Row="5" Content="Cancel" Background="Fuchsia" Margin="0,10,0,0" 
                 Height="25" Width="40" 
                 Foreground="Chartreuse"
                 IsCancel="True"
-                Command="{Binding Path=CancelCommand}"
+                Command="{Binding Path = CloseWindowCommand, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=AddDebtorWindow}"
                 />
 
         <Button Name ="Save" Grid.Column="0" Grid.Row="5" Content="Save" Background="Fuchsia" Margin="0,10,0,0" 
                 Height="25" Width="40" 
                 Foreground="Chartreuse"
-                />
+
+        />
 
 
 

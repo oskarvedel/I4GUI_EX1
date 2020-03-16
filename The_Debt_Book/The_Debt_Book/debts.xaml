@@ -28,11 +28,11 @@
         <ListBox Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" Background="Fuchsia"
                  Name="deptorList"
                  Foreground="Chartreuse"
-                 ItemsSource="{Binding Path=debtorsList}"
-                 SelectedItem="{Binding Path=currentDebtor}"
+                 ItemsSource="{Binding Path=CurrentDebtor}"
+                 SelectedItem="{Binding Path=CurrentDebtor}"
         />
 
-        <TextBox Grid.Column="1" Grid.Row="2" Text="Value" TextAlignment="Center" Background="Fuchsia" Margin="10,10,0,0" 
+        <TextBox Grid.Column="1" Grid.Row="2" Text=""  TextAlignment="Center" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
                 Foreground="Chartreuse"/>
 
@@ -43,7 +43,8 @@
 
         <Button Grid.Column="0" Grid.Row="2" Content="Close" Background="Fuchsia" Margin="10,10,0,0" 
                 Height="25" Width="58" 
-                Foreground="Chartreuse"/>
+                Foreground="Chartreuse"
+                IsCancel="True"/>
 
             
 
