@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Debt_Book"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:interactivity="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="500">
     <Window.DataContext>
@@ -21,6 +23,7 @@
         </Grid.RowDefinitions>
         
         <Label Grid.Column="0" Grid.Row="0" Content="DEBTORS" FontSize="16" FontWeight="Bold" Foreground="Chartreuse" Margin="20,0,0,0"/>
+
         <ListBox Grid.Column="0" Grid.Row="1" Margin="20,10,0,0" Background="Chartreuse"
             Name="deptorList"
             Foreground="Fuchsia"
@@ -29,17 +32,22 @@
             SelectedIndex="{Binding Path=CurrentIndex}"
             IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource DebtorTemplate}"
+        >
+            <i:Interaction.Triggers>
+                <i:EventTrigger  EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding EditDebtsCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
 
-        />
 
+        </ListBox>
 
         <Button Grid.Column="1" Grid.Row="1" Content="Add" Background="Chartreuse" Margin="10,10,0,0" 
                 Height="25" Width="40" 
                 Foreground="Fuchsia"
                 Command="{Binding Path=AddNewDebtorCommand}"/>
 
-        
-        
+
     </Grid>
 </Window>
 

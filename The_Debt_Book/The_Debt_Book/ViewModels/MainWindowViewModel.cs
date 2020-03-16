@@ -60,19 +60,46 @@ namespace The_Debt_Book
 		#region Commands
 
 		#endregion
-		ICommand _newCommand;
-
-        public ICommand AddNewDebtorCommand
+		ICommand addNewDebtorCommand;
+		public ICommand AddNewDebtorCommand
         {
             get
             {
-                return _newCommand ?? (_newCommand = new DelegateCommand(() =>
+                return addNewDebtorCommand ?? (addNewDebtorCommand = new DelegateCommand(() =>
                 {
-                    var vm = new AddDebtorViewModel();
+                    var newDebtor = new Debtor();
+                    var vm = new AddDebtorViewModel(newDebtor);
                     var win2 = new AddDebtorsWindow();
-                    win2.Show();
+                    win2.DataContext = vm;
+                    if (win2.ShowDialog() == true)
+                    {
+                        debtorList.Add(newDebtor);
+                        CurrentDebtor = newDebtor;
+                        CurrentIndex = 0;
+                    }
                 }));
             }
         }
+
+        ICommand editDebtsCommand;
+        public ICommand EditDebtsCommand
+        {
+            get { 
+                return editDebtsCommand ?? (editDebtsCommand = new DelegateCommand(() =>
+                {
+                    var newDebtor = new Debtor();
+                    var vm = new debtsViewModel();
+                    var win2 = new debts();
+                    if (win2.ShowDialog() == true)
+                    {
+
+                    }
+
+                }));
+            }
+        }
+
+
+
     }
 }

@@ -88,7 +88,7 @@
     <Compile Include="AddDebtorsWindow.xaml.cs">
       <DependentUpon>AddDebtorsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddDebtorViewModel.cs" />
+    <Compile Include="ViewModels\AddDebtorViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,14 +98,14 @@
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="debtsViewModel.cs" />
+    <Compile Include="ViewModels\debtsViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -132,5 +132,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,5 +25,9 @@ namespace The_Debt_Book
             InitializeComponent();
         }
 
+        private void deptorList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
