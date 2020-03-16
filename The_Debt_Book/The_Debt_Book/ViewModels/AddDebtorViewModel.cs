@@ -11,13 +11,32 @@ using Prism.Commands;
 
 namespace The_Debt_Book
 {
-    class AddDebtorViewModel : BindableBase
+    public class AddDebtorViewModel : BindableBase
     {
         public AddDebtorViewModel(Debtor debtor)
         {
+
             
         }
+        #region properties
+        private Debtor debtorToAdd = null;
 
+        #endregion
+
+        #region commands
+        ICommand saveDebtor;
+        public ICommand saveDebtor
+        {
+	        get
+	        {
+		        return saveDebtor ?? (saveDebtor = new DelegateCommand(() =>
+		        {
+                    input
+		        }
+		        }));
+	        }
+        }
+        #endregion
     }
 }
 

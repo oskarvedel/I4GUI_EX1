@@ -87,10 +87,7 @@ namespace The_Debt_Book
                 return addNewDebtorCommand ?? (addNewDebtorCommand = new DelegateCommand(() =>
                 {
 
-            
-            
-            
-            }));
+                }));
         }
 
 
