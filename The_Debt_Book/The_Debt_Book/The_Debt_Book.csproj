@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Debt.cs" />
     <Compile Include="Debtor.cs" />
+    <Compile Include="ViewModels\DebtorViewModel.cs" />
     <Compile Include="debts.xaml.cs">
       <DependentUpon>debts.xaml</DependentUpon>
     </Compile>
@@ -105,7 +106,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -132,5 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
