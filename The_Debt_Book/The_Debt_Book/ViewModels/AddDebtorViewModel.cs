@@ -13,27 +13,32 @@ namespace The_Debt_Book
 {
     public class AddDebtorViewModel : BindableBase
     {
-        public AddDebtorViewModel(Debtor debtor)
+        public AddDebtorViewModel (Debtor newDebtor)
         {
-
-            
+	        CurrentDebtor = newDebtor;
         }
+
         #region properties
-        private Debtor debtorToAdd = null;
+        Debtor currentDebtor;
+
+        public Debtor CurrentDebtor
+		{
+        get { return currentDebtor; }
+        set
+        {
+	        SetProperty(ref currentDebtor, value);
+        }
+        }
 
         #endregion
 
         #region commands
-        ICommand saveDebtor;
-        public ICommand saveDebtor
+        ICommand _saveBtnCommand;
+        public ICommand OkBtnCommand
         {
 	        get
 	        {
-		        return saveDebtor ?? (saveDebtor = new DelegateCommand(() =>
-		        {
-                    input
-		        }
-		        }));
+		        return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand()));
 	        }
         }
         #endregion
