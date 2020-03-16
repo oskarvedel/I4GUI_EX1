@@ -95,7 +95,6 @@ namespace The_Debt_Book
                     {
 
                     }
-
                 }));
             }
         }

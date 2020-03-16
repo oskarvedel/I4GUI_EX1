@@ -15,8 +15,6 @@ namespace The_Debt_Book
         private string name;
         private int totaldebt;
         private ObservableCollection<Debt> debts;
-
-
         public Debtor()
         {
         }

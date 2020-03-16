@@ -11,7 +11,6 @@ namespace The_Debt_Book
 	{
 		private int debtValue;
 		private DateTime date;
-
 		public Debt(int dvalue, DateTime ddate)
 		{
 			debtValue = dvalue;
