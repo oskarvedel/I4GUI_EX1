@@ -84,10 +84,15 @@ namespace The_Debt_Book
         public ICommand EditDebtsCommand
         {
             get { 
-                return addNewDebtorCommand ?? (addNewDebtorCommand = new DelegateCommand(() =>
+                return editDebtsCommand ?? (editDebtsCommand = new DelegateCommand(() =>
                 {
+                    var newDebtor = new Debtor();
+                    var vm = new debtsViewModel();
+                    var win2 = new debts();
+                    if (win2.ShowDialog() == true) { }
 
                 }));
+            }
         }
 
 
