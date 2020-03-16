@@ -8,5 +8,6 @@ namespace The_Debt_Book
 {
     class debtsViewModel
     {
+
     }
 }
