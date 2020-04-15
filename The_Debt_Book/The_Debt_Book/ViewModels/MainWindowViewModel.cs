@@ -1,4 +1,5 @@
 ﻿using The_Debt_Book;
+using The_Debt_Book.Data;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -11,6 +12,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 using System.Xml.Serialization;
+using System.Windows.Data;
+using Microsoft.Win32;
 
 namespace The_Debt_Book.ViewModels
 {
@@ -18,7 +21,7 @@ namespace The_Debt_Book.ViewModels
 	{
         private Debtor _currentDebtor;
 		private ObservableCollection<Debtor> debtorList;
-
+        private string filePath = "";
         public MainWindowViewModel()
         {
             debtorList = new ObservableCollection<Debtor>()
@@ -103,10 +106,98 @@ namespace The_Debt_Book.ViewModels
                            }
                        },
                        () => {
-                           return CurrentIndex >= 0;
-                       }
-                   ).ObservesProperty(() => CurrentIndex));
+                                 return CurrentIndex >= 0;
+                             }
+                                ).ObservesProperty(() => CurrentIndex));
+        }
+
+
+        private string filename = "";
+        public string Filename
+        {
+            get { return filename; }
+            set
+            {
+                SetProperty(ref filename, value);
+                RaisePropertyChanged("Title");
             }
         }
 
+
+        ICommand _SaveCommand;
+
+        public ICommand SaveCommand
+        {
+            get { return _SaveCommand ?? (_SaveCommand = new DelegateCommand<string>(SaveCommand_execute)); }
+        }
+
+        private void SaveCommand_execute(string argFilename)
+        {
+           var dialog = new SaveFileDialog
+             {
+               Filter = "Debtors|*.txt|All Files|*.*",
+               DefaultExt = "txt"
+             };
+             if (filePath == "")
+                  dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+             else
+                  dialog.InitialDirectory = Path.GetDirectoryName(filePath);
+
+            if (dialog.ShowDialog(App.Current.MainWindow) == true)
+            {
+                filePath = dialog.FileName;
+                Filename = Path.GetFileName(filePath);
+                SaveFile();
+            }
+        }
+
+
+        private void SaveFile()
+        {
+            try
+            {
+                Repo.SaveFile(filePath, DebtorList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to save file", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        ICommand _OpenFileCommand;
+        public ICommand OpenFileCommand
+        {
+            get { return _OpenFileCommand ?? (_OpenFileCommand = new DelegateCommand<string>(OpenFileCommand_Execute)); }
+        }
+
+        private void OpenFileCommand_Execute(string argFilename)
+        {
+            var dialog = new OpenFileDialog
+            {
+                Filter = "Debtors|*.txt|All Files|*.*",
+                DefaultExt = "txt"
+            };
+            if (filePath == "")
+                dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            else
+                dialog.InitialDirectory = Path.GetDirectoryName(filePath);
+
+            if (dialog.ShowDialog(App.Current.MainWindow) == true)
+            {
+                filePath = dialog.FileName;
+                Filename = Path.GetFileName(filePath);
+                try
+                {
+                    Repo.ReadFile(filePath, out ObservableCollection<Debtor> tempDeptor);
+                    DebtorList = tempDeptor;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unable to open file", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
+
+}

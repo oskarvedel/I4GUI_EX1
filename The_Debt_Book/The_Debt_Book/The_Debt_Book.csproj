@@ -88,6 +88,7 @@
     <Compile Include="AddDebtorsWindow.xaml.cs">
       <DependentUpon>AddDebtorsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Repo.cs" />
     <Compile Include="ViewModels\AddDebtorViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

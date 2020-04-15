@@ -33,6 +33,7 @@
             SelectedIndex="{Binding Path=CurrentIndex}"
             IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource DebtorTemplate}"
+          
         >
 
         <i:Interaction.Triggers>
@@ -50,6 +51,15 @@
                 Command="{Binding Path=AddNewDebtorCommand}"/>
 
 
+        <Button Grid.Column="1" Grid.Row="1" Content="Save" Background="Chartreuse" Margin="10,10,0,60" 
+                Height="25" Width="40" 
+                Foreground="Fuchsia"
+                Command="{Binding SaveCommand}"/>
+
+        <Button Grid.Column="1" Grid.Row="1" Content="Open" Background="Chartreuse" Margin="10,10,0,-60" 
+                Height="25" Width="40" 
+                Foreground="Fuchsia"
+                Command="{Binding OpenFileCommand}"/>
     </Grid>
 </Window>
 
