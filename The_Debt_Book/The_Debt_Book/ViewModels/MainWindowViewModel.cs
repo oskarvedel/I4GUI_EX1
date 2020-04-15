@@ -165,13 +165,13 @@ namespace The_Debt_Book.ViewModels
         }
 
 
-        ICommand _OpenFileCommand;
+        ICommand _OpenCommand;
         public ICommand OpenFileCommand
         {
-            get { return _OpenFileCommand ?? (_OpenFileCommand = new DelegateCommand<string>(OpenFileCommand_Execute)); }
+            get { return _OpenCommand ?? (_OpenCommand = new DelegateCommand<string>(OpenCommand_execute)); }
         }
 
-        private void OpenFileCommand_Execute(string argFilename)
+        private void OpenCommand_execute(string argFilename)
         {
             var dialog = new OpenFileDialog
             {
